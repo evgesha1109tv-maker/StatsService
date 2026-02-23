@@ -1,22 +1,21 @@
 public class StatsService {
     public int amountOfSales(long[] sales) {
         //Сумма продаж за все месяцы
-        int amount = 0;
+        long amount = 0;
         for (int i = 0; i < sales.length; i++) {
             amount += sales[i];
         }
-        return amount;
+        return (int) amount;
     }
 
     public int averageAmount(long[] sales) {
         //Среднее значение за все месяцы
-        int average = 0;
-        int amount = 0;
+        long average = 0;
+        long amount = amountOfSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            amount += (int) sales[i];
             average = amount / (sales.length);
         }
-        return average;
+        return (int) average;
     }
 
     public int maxSales(long[] sales) {
@@ -44,13 +43,8 @@ public class StatsService {
     }
 
     public int salesBelowAverage(long[] sales) {
-        int average = 0;
-        int amount = 0;
+        long average = averageAmount(sales);
         int belowAverageMoth = 0;
-        for (int i = 0; i < sales.length; i++) {
-            amount += (int) sales[i];
-            average = amount / (sales.length);// находим среднее значение
-        }
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < average) { // если значение в ячейке меньше среднего то добавлем в счетчике +1
                 belowAverageMoth++;
@@ -60,13 +54,8 @@ public class StatsService {
     }
 
     public int salesAboveverage(long[] sales) {
-        int average = 0;
-        int amount = 0;
+        long average = averageAmount(sales);
         int aboveAverageMoth = 0;
-        for (int i = 0; i < sales.length; i++) {
-            amount += (int) sales[i];
-            average = amount / (sales.length); // находим среднее значение
-        }
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > average) { //если значение в ячейке больше среднего то добавлем в счетчике +1
                 aboveAverageMoth++;
