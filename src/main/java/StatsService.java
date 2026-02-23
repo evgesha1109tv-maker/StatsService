@@ -5,7 +5,7 @@ public class StatsService {
         for (int i = 0; i < sales.length; i++) {
             amount += sales[i];
         }
-        return (int) amount;
+        return amount;
     }
 
     public long averageAmount(long[] sales) {
@@ -15,7 +15,7 @@ public class StatsService {
         for (int i = 0; i < sales.length; i++) {
             average = amount / (sales.length);
         }
-        return (int) average;
+        return average;
     }
 
     public long maxSales(long[] sales) {
