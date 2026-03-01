@@ -18,7 +18,7 @@ public class StatsService {
         return average;
     }
 
-    public long maxSales(long[] sales) {
+    public int maxSales(long[] sales) {
         int maxMonth = 0; // номер месяца с максимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -30,7 +30,7 @@ public class StatsService {
         return maxMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public long minSales(long[] sales) {
+    public int minSales(long[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -42,7 +42,7 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public long salesBelowAverage(long[] sales) {
+    public int salesBelowAverage(long[] sales) {
         long average = averageAmount(sales);
         int belowAverageMoth = 0;
         for (int i = 0; i < sales.length; i++) {
@@ -53,7 +53,7 @@ public class StatsService {
         return belowAverageMoth;
     }
 
-    public long salesAboveverage(long[] sales) {
+    public int salesAboveverage(long[] sales) {
         long average = averageAmount(sales);
         int aboveAverageMoth = 0;
         for (int i = 0; i < sales.length; i++) {
